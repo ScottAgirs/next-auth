@@ -19,7 +19,7 @@ export default function parseUrl(url?: string): InternalUrl {
     url = `https://${url}`
   }
 
-  const _url = new URL(url ?? defaultUrl)
+  const _url = new URL(url || defaultUrl)
   const path = (_url.pathname === "/" ? defaultUrl.pathname : _url.pathname)
     // Remove trailing slash
     .replace(/\/$/, "")
